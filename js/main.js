@@ -1,3 +1,6 @@
+// import configData from './data/data.json';
+// console.log(JSON.stringify(configData));
+
 const UrlData = "./data/data.json";
 const body = document.querySelector("body");
 const divForTable = document.querySelector(".divForTable");
@@ -10,7 +13,12 @@ const config = {
   arrData: [], //
 };
 
-const readJson = (UrlJson) => {
+
+
+readJson(UrlData); //запуск постройки таблицы
+
+
+function readJson(UrlJson) {
   // запрос файла
   fetch(UrlJson)
     .then((response) => {
@@ -29,9 +37,9 @@ const readJson = (UrlJson) => {
     .catch(function () {
       this.dataError = true;
     });
-};
+}
 
-const createLine = (location, obj) => {
+function createLine(location, obj) {
   //фунция по созданию строки в уже созданной таблице
   let tr = document.createElement("tr");
   tr.addEventListener("click", () => createForm(obj));
@@ -58,9 +66,9 @@ const createLine = (location, obj) => {
     }
   }
   location.appendChild(tr);
-};
+}
 
-const createTable = () => {
+function createTable() {
   //функция по создани таблицы
   let table = document.createElement("table"); //создаем таблицу
   table.setAttribute("class", "content"); // даём таблице класс content
@@ -96,9 +104,9 @@ const createTable = () => {
   createPage(arrChunk(config.arrData, 10)[config.pageNow], tbody);
 
   // createButtonChangePage(json, divForTable);
-};
+}
 
-readJson(UrlData); //запуск постройки таблицы
+
 
 function sortedRows(columnName) {
   function getPath(object, key) {
