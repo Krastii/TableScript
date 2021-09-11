@@ -1,91 +1,93 @@
-body{
-
-    display: flex;
-    justify-content: center;/* центрирование таблицы */
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif; 
-      /* шрифт по-приятнее */
-    /* -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
-    background-color: #282c34; 
-    color: azure;
+body {
+  display: flex;
+  justify-content: center; /* центрирование таблицы */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  /* шрифт по-приятнее */
+  background-color: #282c34;
+  color: azure;
 }
 
-.divForTable{
-    width: 50%;
+.divForTable {
+  /* width: 50%; */
+  flex:0 0 50%;
 }
 
-.divChangePage{
-    display: flex;
-    justify-content: center;
+.divChangePage {
+  display: flex;
+  justify-content: center;
 }
 
-.divChangeColumns{
-    display: flex;
-    justify-content: center;
-}
-
-/* внешние границы таблицы серого цвета толщиной 1px */
-.content{
-    border: 1px solid grey;
-}
-
-form{
-    width: 50%;
-    justify-content: center;
-}
-
-thead{
-    cursor: pointer;
-}
-
-tfoot{
-    align-items: center;
-}
-
-button{
-    border: none;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
+.divChangeColumns {
+  display: flex;
+  justify-content: center;
 }
 
 
+table {
+  border: 1px solid grey;
+  /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+  border-collapse: collapse;
+  /*убираем пустые промежутки между ячейками*/
+  empty-cells: hide;
+  /* не показываем пустые ячейки */
+  font-size: 14px;
+  /* размер шрифта */
+}
+
+.changeContent{
+  flex:0 0 50%;
+  
+}
+
+form {
+  text-align: center;
+}
+
+thead {
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+tfoot {
+  align-items: center;
+}
+
+button {
+  /* красивые кнопки */
+  border: none;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.btnActive {
+  /* выделяет нужную страницу */
+  background-color: green;
+}
 
 /* границы ячеек первого ряда таблицы */
 th {
-    border: 1px solid grey;
+  border: 1px solid grey;
 }
 
 /* границы ячеек тела таблицы */
 td {
-    border: 1px solid grey;
-    padding: 0.2rem;
+  border: 1px solid grey;
+  padding: 0.2rem;
 }
 
-.about{
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.about {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  /* даёт видеть только первые две строчки */
 }
-/* 
-.cutter {
-    box-sizing: border-box;
-    box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.6);
-    margin: 15px;
-    overflow: hidden;
-    padding: 0em 1em 0em 4em;
-    resize: horizontal;
-    text-align: justify; 
-    height: 0.4em;
-    position: relative;
-}
- */
